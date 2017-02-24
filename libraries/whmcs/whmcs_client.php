@@ -2,10 +2,13 @@
 
 /**
 * WHMCS API
+ * Updated to be compatible with 7.0
 *
 * @author    Joe Parihar
-* @version   v0.0.1
+* @version   v1.0.1
 * @copyright 2013
+ *
+ * @updated Daniel Babatunde
 */
 
 
@@ -51,11 +54,11 @@ class Whmcs_client{
 	*
 	* See:
     *
-    * http://docs.whmcs.com/API:Add_Client
+    * https://developers.whmcs.com/api-reference/addclient/
     */
 
 	public function whmcs_add_client($params = array()) {
-	    $params['action'] = 'addclient';
+	    $params['action'] = 'AddClient';
 	    return Whmcs_base::send_request($params);
   	}
 
@@ -101,11 +104,11 @@ class Whmcs_client{
   	*
 	* See:
     *
-    * http://docs.whmcs.com/API:Update_Client
+    * https://developers.whmcs.com/api-reference/updateclient/
     */
 
   	public function whmcs_update_client($params = array()) {
-	    $params['action'] = 'updateclient';
+	    $params['action'] = 'UpdateClient';
 	    return Whmcs_base::send_request($params);
   	}
 	
@@ -120,11 +123,11 @@ class Whmcs_client{
     *
 	* see
 	*
-    * http://docs.whmcs.com/API:Delete_Client
+    * https://developers.whmcs.com/api-reference/deleteclient/
     */
 
   	public function whmcs_delete_client($params = array()) {
-	    $params['action'] = 'deleteclient';
+	    $params['action'] = 'DeleteClient';
 	    return Whmcs_base::send_request($params);
   	}
 	
@@ -139,11 +142,11 @@ class Whmcs_client{
     *
 	* see
 	*
-    * http://docs.whmcs.com/API:Close_Client
+    * https://developers.whmcs.com/api-reference/closeclient/
     */
 
   	public function whmcs_close_client($params = array()) {
-	    $params['action'] = 'closeclient';
+	    $params['action'] = 'CloseClient';
 	    return Whmcs_base::send_request($params);
   	}
 
@@ -159,11 +162,11 @@ class Whmcs_client{
     * 
 	* see
 	*
-    * http://docs.whmcs.com/API:Add_Client_Note
+    * https://developers.whmcs.com/api-reference/addclientnote/
     */
 
   	public function whmcs_add_client_note($params = array()) {
-	    $params['action'] = 'addclientnote';
+	    $params['action'] = 'AddClientNote';
 	    return Whmcs_base::send_request($params);
   	}
 
@@ -180,11 +183,11 @@ class Whmcs_client{
     * 
 	* see
 	*
-    * http://docs.whmcs.com/API:Get_Clients
+    * https://developers.whmcs.com/api-reference/getclients/
     */
 
   	public function whmcs_get_clients($params = array()) {
-	    $params['action'] = 'getclients';
+	    $params['action'] = 'GetClients';
 	    return Whmcs_base::send_request($params);
   	}
 
@@ -205,11 +208,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Get_Clients_Details
+	* https://developers.whmcs.com/api-reference/getclientsdetails/
 	*/
 
 	public function whmcs_get_clients_details($params = array()) {
-		$params['action'] = 'getclientsdetails';
+		$params['action'] = 'GetClientsDetails';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -224,11 +227,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Get_Credits
+	* https://developers.whmcs.com/api-reference/getclients/
 	*/
 
 	public function whmcs_get_credits($params = array()) {
-		$params['action'] = 'getcredits';
+		$params['action'] = 'GetCredits';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -250,11 +253,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Get_Emails
+	* https://developers.whmcs.com/api-reference/getemails/
 	*/
 
 	public function whmcs_get_emails($params = array()) {
-		$params['action'] = 'getemails';
+		$params['action'] = 'GetEmails';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -281,11 +284,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Get_Quotes
+	* https://developers.whmcs.com/api-reference/getquotes/
 	*/
 
 	public function whmcs_get_quotes($params = array()) {
-		$params['action'] = 'getquotes';
+		$params['action'] = 'GetQuotes';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -303,11 +306,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://wiki.whmcs.com/API:Get_Clients_Password
+	* https://developers.whmcs.com/api-reference/getclientpassword/
 	*/
 
 	public function whmcs_get_clients_password($params = array()) {
-		$params['action'] = 'getclientpassword';
+		$params['action'] = 'GetClientPassword';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -327,11 +330,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Get_Transactions
+	* https://developers.whmcs.com/api-reference/gettransactions/
 	*/
 
 	public function whmcs_get_transactions($params = array()) {
-		$params['action'] = 'gettransactions';
+		$params['action'] = 'GetTransactions';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -366,11 +369,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Add_Contact
+	* https://developers.whmcs.com/api-reference/addcontact/
 	*/
 
 	public function whmcs_add_contact($params = array()) {
-		$params['action'] = 'addcontact';
+		$params['action'] = 'AddContact';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -402,11 +405,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Get_Contacts
+	* https://developers.whmcs.com/api-reference/getcontacts/
 	*/
 
 	public function whmcs_get_contacts($params = array()) {
-		$params['action'] = 'getcontacts';
+		$params['action'] = 'GetContacts';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -442,11 +445,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Update_Contact
+	* https://developers.whmcs.com/api-reference/updatecontact/
 	*/
 
 	public function whmcs_update_contact($params = array()) {
-		$params['action'] = 'updatecontact';
+		$params['action'] = 'UpdateContact';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -464,11 +467,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Delete_Contact
+	* https://developers.whmcs.com/api-reference/deletecontact/
 	*/
 
 	public function whmcs_delete_contact($params = array()) {
-		$params['action'] = 'deletecontact';
+		$params['action'] = 'DeleteContact';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -492,11 +495,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Get_Clients_Products
+	* https://developers.whmcs.com/api-reference/getclientsproducts/
 	*/
 
 	public function whmcs_get_clients_products($params = array()) {
-		$params['action'] = 'getclientsproducts';
+		$params['action'] = 'GetClientsProducts';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -536,11 +539,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Update_Client_Product
+	* https://developers.whmcs.com/api-reference/updateclientproduct/
 	*/
 
 	public function whmcs_update_client_product($params = array()) {
-		$params['action'] = 'updateclientproduct';
+		$params['action'] = 'UpdateClientProduct';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -560,11 +563,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Get_Clients_Addons
+	* https://developers.whmcs.com/api-reference/getclientaddons/
 	*/
 
 	public function whmcs_get_clients_addons($params = array()) {
-		$params['action'] = 'getclientsaddons';
+		$params['action'] = 'GetClientsAddons';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -590,11 +593,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Update_Client_Addon
+	* https://developers.whmcs.com/api-reference/updateclientaddon/
 	*/
 
 	public function whmcs_update_client_addon($params = array()) {
-		$params['action'] = 'updateclientaddon';
+		$params['action'] = 'UpdateClientAddon';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -617,11 +620,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Get_Clients_Domains
+	* https://developers.whmcs.com/api-reference/getclientdomain/
 	*/
 
 	public function whmcs_get_clients_domains($params = array()) {
-		$params['action'] = 'getclientsdomains';
+		$params['action'] = 'GetClientsDomains';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -661,11 +664,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Update_Client_Domain
+	* https://developers.whmcs.com/api-reference/updateclientdomain/
 	*/
 
 	public function whmcs_update_client_domain($params = array()) {
-		$params['action'] = 'updateclientdomain';
+		$params['action'] = 'UpdateClientDomain';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -684,11 +687,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Add_Cancel_Request
+	* https://developers.whmcs.com/api-reference/addcancelrequest/
 	*/
 
 	public function whmcs_add_cancel_request($params = array()) {
-		$params['action'] = 'addcancelrequest';
+		$params['action'] = 'AddCancelRequest';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -714,11 +717,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Upgrade_Product
+	* https://developers.whmcs.com/api-reference/upgradeproduct/
 	*/
 
 	public function whmcs_upgrade_product($params = array()) {
-		$params['action'] = 'upgradeproduct';
+		$params['action'] = 'UpgradeProduct';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -737,11 +740,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Validate_Login
+	* https://developers.whmcs.com/api-reference/validatelogin/
 	*/
 
 	public function whmcs_validate_login($params = array()) {
-		$params['action'] = 'validatelogin';
+		$params['action'] = 'ValidateLogin';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -764,11 +767,11 @@ class Whmcs_client{
 	*
 	* See:
 	*
-	* http://docs.whmcs.com/API:Send_Email
+	* https://developers.whmcs.com/api-reference/sendemail/
 	*/
 
 	public function whmcs_send_email($params = array()) {
-		$params['action'] = 'sendemail';
+		$params['action'] = 'SendEmail';
 		return Whmcs_base::send_request($params);
 	}
 }
