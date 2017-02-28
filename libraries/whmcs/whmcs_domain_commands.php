@@ -4,14 +4,18 @@
 * WHMCS API
 *
 * @author    Joe Parihar
-* @version   v0.0.1
-* @copyright 2013
+ * @updated     Daniel Babatunde https://github.com/babatundeodaniel
+* @version   v1.0.1
+* @copyright 2017
 */
 
 
 require_once "whmcs_base.php";
 class Whmcs_domain_commands{
-	
+
+    public function __construct(){
+        $this->whmcs_base = new Whmcs_base();
+    }
 	// --------------------------------------------------------------------***************
 	/**
 	* This command is used to send a Register command to the registrar
@@ -31,8 +35,8 @@ class Whmcs_domain_commands{
 	*/
 
 	public function whmcs_domain_register($params = array()) {
-		$params['action'] = 'domainregister';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'DomainRegister';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------***************
@@ -54,8 +58,8 @@ class Whmcs_domain_commands{
 	*/
 
 	public function whmcs_domain_renew($params = array()) {
-		$params['action'] = 'domainrenew';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'DomainRenew';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------***************
@@ -77,8 +81,8 @@ class Whmcs_domain_commands{
 	*/
 
 	public function whmcs_domain_transfer($params = array()) {
-		$params['action'] = 'domaintransfer';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'DomainTransfer';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------***************
@@ -101,8 +105,8 @@ class Whmcs_domain_commands{
 	*/
 
 	public function whmcs_domain_release($params = array()) {
-		$params['action'] = 'domainrelease';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'DomainRelease';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------***************
@@ -123,8 +127,8 @@ class Whmcs_domain_commands{
 	*/
 
 	public function whmcs_domain_get_locking_status($params = array()) {
-		$params['action'] = 'domaingetlockingstatus';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'DomainGetLockingStatus';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------***************
@@ -145,8 +149,8 @@ class Whmcs_domain_commands{
 	*/
 
 	public function whmcs_domain_get_name_servers($params = array()) {
-		$params['action'] = 'domaingetnameservers';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'DomainGetNameservers';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------***************
@@ -167,8 +171,8 @@ class Whmcs_domain_commands{
 	*/
 
 	public function whmcs_domain_get_whois_info($params = array()) {
-		$params['action'] = 'domaingetwhoisinfo';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'DomainGetWhoisInfo';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------***************
@@ -189,8 +193,8 @@ class Whmcs_domain_commands{
 	*/
 
 	public function whmcs_domain_request_epp($params = array()) {
-		$params['action'] = 'domainrequestepp';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'DomainRequestEpp';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------***************
@@ -212,8 +216,8 @@ class Whmcs_domain_commands{
 	*/
 
 	public function whmcs_domain_toggle_id_protect($params = array()) {
-		$params['action'] = 'domaintoggleidprotect';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'DomainToggleIdProtect';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------***************
@@ -234,8 +238,8 @@ class Whmcs_domain_commands{
 	*/
 
 	public function whmcs_domain_update_locking_status($params = array()) {
-		$params['action'] = 'domainupdatelockingstatus';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'DomainUpdateLockingStatus';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------***************
@@ -261,8 +265,8 @@ class Whmcs_domain_commands{
 	*/
 
 	public function whmcs_domain_update_name_servers($params = array()) {
-		$params['action'] = 'domainupdatenameservers';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'DomainUpdateNameservers';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------***************
@@ -284,8 +288,8 @@ class Whmcs_domain_commands{
 	*/
 
 	public function whmcs_domain_update_whois_info($params = array()) {
-		$params['action'] = 'domainupdatewhoisinfo';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'DomainUpdateWhoisInfo';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------***************
@@ -305,8 +309,8 @@ class Whmcs_domain_commands{
 	* http://docs.whmcs.com/API:Domain_WHOIS
 	*/
 
-	public function whmcs_domain_whois($params = array()) {
-		$params['action'] = 'domainwhois';
-		return Whmcs_base::send_request($params);
+	public function whmcs_domain_whois($params = []) {
+		$params['action'] = 'DomainWhois';
+		return $this->whmcs_base->send_request($params);
 	}
 }

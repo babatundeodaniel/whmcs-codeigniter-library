@@ -60,7 +60,7 @@ class Whmcs_order_handling extends WHMCS_Base{
     */
 
 	public function whmcs_add_order($params = array()) {
-	    $params['action'] = 'addorder';
+	    $params['action'] = 'AddOrder';
 	    return Whmcs_base::send_request($params);
   	}
 
@@ -87,7 +87,7 @@ class Whmcs_order_handling extends WHMCS_Base{
 	*/
 
 	public function whmcs_get_orders($params = array()) {
-		$params['action'] = 'getorders';
+		$params['action'] = 'GetOrders';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -112,7 +112,7 @@ class Whmcs_order_handling extends WHMCS_Base{
 	*/
 
 	public function whmcs_get_products($params = array()) {
-		$params['action'] = 'getproducts';
+		$params['action'] = 'GetProducts';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -135,7 +135,7 @@ class Whmcs_order_handling extends WHMCS_Base{
 	*/
 
 	public function whmcs_get_promotions($params = array()) {
-		$params['action'] = 'getpromotions';
+		$params['action'] = 'GetPromotions';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -158,7 +158,7 @@ class Whmcs_order_handling extends WHMCS_Base{
 	*/
 
 	public function whmcs_get_order_statuses($params = array()) {
-		$params['action'] = 'getorderstatuses';
+		$params['action'] = 'GetOrderStatuses';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -186,7 +186,7 @@ class Whmcs_order_handling extends WHMCS_Base{
 	*/
 
 	public function whmcs_accept_order($params = array()) {
-		$params['action'] = 'acceptorder';
+		$params['action'] = 'AcceptOrder';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -209,7 +209,7 @@ class Whmcs_order_handling extends WHMCS_Base{
 	*/
 
 	public function whmcs_pending_order($params = array()) {
-		$params['action'] = 'pendingorder';
+		$params['action'] = 'PendingOrder';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -232,7 +232,7 @@ class Whmcs_order_handling extends WHMCS_Base{
 	*/
 
 	public function whmcs_cancel_order($params = array()) {
-		$params['action'] = 'cancelorder';
+		$params['action'] = 'CancelOrder';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -256,7 +256,7 @@ class Whmcs_order_handling extends WHMCS_Base{
 	*/
 
 	public function whmcs_fraud_order($params = array()) {
-		$params['action'] = 'fraudorder';
+		$params['action'] = 'FraudOrder';
 		return Whmcs_base::send_request($params);
 	}
 
@@ -279,7 +279,7 @@ class Whmcs_order_handling extends WHMCS_Base{
 	*/
 
 	public function whmcs_delete_order($params = array()) {
-		$params['action'] = 'deleteorder';
+		$params['action'] = 'DeleteOrder';
 		return Whmcs_base::send_request($params);
 	}
 

@@ -4,14 +4,16 @@
 * WHMCS API
 *
 * @author    Joe Parihar
-* @version   v0.0.1
+ * @updated     Daniel Babatunde https://github.com/babatundeodaniel
+* @version   v1.0.1
 * @copyright 2013
 */
 
 
-define('WHMCS_URL', 'http://demo.whmcs.com/includes/api.php');
-define('WHMCS_USERNAME', 'username'); // username
-define('WHMCS_PASSWORD', md5('password')); //password should be in md5 
+define('WHMCS_URL', 'https://upperlinkwhmcs.ng/clients/includes/api.php');
+define('WHMCS_USERNAME', 'dab'); // username
+define('WHMCS_PASSWORD', 'invention11.'); //password should be in md5
+define('WHMCS_ACCESS_KEY', 'UPL#@CC3ssK3Y'); //Access key
 
 class Whmcs_base{
 
@@ -27,15 +29,20 @@ class Whmcs_base{
 	      exit;
 	    }
 
+	    if(!defined('WHMCS_ACCESS_KEY')){
+            trigger_error("Kindly define the api access  key else WHMCS will not allow access nigga!");
+            exit;
+        }
+
 	    $url=WHMCS_URL;
 	    $params['username'] = WHMCS_USERNAME;
-	    $params['password'] = WHMCS_PASSWORD;	
-	    $params['accesskey'] = 's9!e8@c7u6r5e'; //secrete key
+	    $params['password'] = md5(WHMCS_PASSWORD);
+	    $params['accesskey'] = WHMCS_ACCESS_KEY; //secrete key
 		$params["responsetype"] = "json";
 		 
-		$query_string = "";
-		foreach ($params AS $k=>$v) $query_string .= "$k=".urlencode($v)."&";
-
+		$query_string = http_build_query($params);
+		//foreach ($params AS $k=>$v) $query_string .= "$k=".urlencode($v)."&";
+        //print_r($query_string);
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_POST, 1);
@@ -48,15 +55,19 @@ class Whmcs_base{
 		if (curl_error($ch)) die("Connection Error: ".curl_errno($ch).' - '.curl_error($ch));
 		curl_close($ch);
 
-		return $arr = json_decode($jsondata); # Decode JSON String
+
 
 		//print_r($arr); # Output XML Response as Array
 
-		/*
-		Debug Output - Uncomment if needed to troubleshoot problems
-		echo "<textarea rows=50 cols=100>Request: ".print_r($postfields,true);
-		echo "\nResponse: ".htmlentities($jsondata)."\n\nArray: ".print_r($arr,true);
+
+		#Debug Output - Uncomment if needed to troubleshoot problems
+            /*
+		echo "<textarea rows=50 cols=100>Request: ".print_r($query_string,true);
+		echo "\nResponse: ".htmlentities($jsondata)."\n\nArray: ".print_r(json_decode($jsondata),true);
 		echo "</textarea>";
-		*/
+            */
+
+		return json_decode($jsondata); # Decode JSON String
+
 	}	
 }

@@ -4,14 +4,19 @@
 * WHMCS API
 *
 * @author    Joe Parihar
-* @version   v0.0.1
-* @copyright 2013
+ * @updated     Daniel Babatunde https://github.com/babatundeodaniel
+* @version   v1.0.1
+* @copyright 2017
 */
 
 
 require_once "whmcs_base.php";
 class Whmcs_miscellaneous{
-		
+
+    public function __construct(){
+        $this->whmcs_base = new Whmcs_base();
+    }
+
 	/**
 	* This command is used to generate an XML list of the activity log
 	*
@@ -30,8 +35,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_get_activity_log($params = array()) {
-		$params['action'] = 'getactivitylog';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'GetActivityLog';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -53,8 +58,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_get_admin_details($params = array()) {
-		$params['action'] = 'getadmindetails';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'GetAdminDetails';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -76,8 +81,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_update_admin_notes($params = array()) {
-		$params['action'] = 'updateadminnotes';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'UpdateAdminNotes';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -99,8 +104,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_get_currencies($params = array()) {
-		$params['action'] = 'get_currencies';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'GetCurrencies';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -122,8 +127,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_get_promotions($params = array()) {
-		$params['action'] = 'getpromotions';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'GetPromotions';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -145,8 +150,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_get_client_groups($params = array()) {
-		$params['action'] = 'getclientgroups';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'GetClientGroups';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -169,8 +174,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_get_email_templates($params = array()) {
-		$params['action'] = 'getemailtemplates';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'GetEmailTemplates';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -194,8 +199,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_get_todo_items($params = array()) {
-		$params['action'] = 'gettodoitems';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'GetTodoItems';
+		return $this->whmcs_base->send_request($params);
 	}
 
 
@@ -218,8 +223,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_get_todo_item_statuses($params = array()) {
-		$params['action'] = 'gettodoitemstatuses';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'GetTodoItemStatuses';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -246,8 +251,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_update_todo_item($params = array()) {
-		$params['action'] = 'updatetodoitem';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'UpdateTodoItem';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -269,8 +274,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_get_staff_online($params = array()) {
-		$params['action'] = 'getstaffonline';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'GetStaffOnline';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -292,8 +297,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_get_stats($params = array()) {
-		$params['action'] = 'getstats';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'GetStats';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -315,8 +320,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_encrypt_password($params = array()) {
-		$params['action'] = 'encryptpassword';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'EncryptPassword';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -338,8 +343,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_decrypt_password($params = array()) {
-		$params['action'] = 'decryptpassword';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'DecryptPassword';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -363,8 +368,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_add_banned_ip($params = array()) {
-		$params['action'] = 'addbannedip';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'AddBannedIp';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -405,8 +410,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_add_product($params = array()) {
-		$params['action'] = 'addproduct';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'AddProduct';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -428,8 +433,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_log_activity($params = array()) {
-		$params['action'] = 'logactivity';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'LogActivity';
+		return $this->whmcs_base->send_request($params);
 	}
 
 	// --------------------------------------------------------------------
@@ -455,8 +460,8 @@ class Whmcs_miscellaneous{
 	*/
 
 	public function whmcs_send_admin_email($params = array()) {
-		$params['action'] = 'sendadminemail';
-		return Whmcs_base::send_request($params);
+		$params['action'] = 'SendAdminEmail';
+		return $this->whmcs_base->send_request($params);
 	}
 	
 }
